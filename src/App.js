@@ -80,8 +80,8 @@ function App() {
             )}
           </button>
           <div className="text-center flex-grow-1">
-            <h1 className="display-3 fw-bold mb-3 app-title">Klick Click</h1>
-            <p className="lead app-subtitle">Learn Korean Vocabulary</p>
+            <h1 className="display-3 fw-bold mb-3 app-title">KlickClick</h1>
+            <p className="lead app-subtitle">Learn Vocabulary</p>
           </div>
         </div>
 

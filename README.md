@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# KlickClick
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A vocabulary learning flashcard application built with React for improving Korean pronunciation and vocabulary through daily practice.
 
-## Available Scripts
+![KlickClick App](./screenshot-1.png)
 
-In the project directory, you can run:
+![KlickClick Flashcard](./screenshot-2.png)
 
-### `npm start`
+## Why I Built This
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**The Problem:**
+After taking Korean beginner classes, I realized I wasn't good at reading Korean words quickly with the correct pronunciation. I tried several flashcard web apps but faced several limitations:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Most apps required uploading files or creating custom decks
+- Random words were tested instead of commonly used daily vocabulary
+- Difficult to verify if I was reading the Hangul correctly before seeing the answer
+- Lacked focus on pronunciation practice
 
-### `npm test`
+**The Inspiration:**
+Watching my nephew in kindergarten learn words using physical flashcards inspired me to create a digital version that focuses on the fundamentals - reading, pronunciation, and meaning.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**The Solution:**
+Built KlickClick with the following improvements:
 
-### `npm run build`
+- **Two-Click Verification:** First click shows pronunciation in romanization to verify you read the Hangul correctly, second click moves to next card
+- **Pre-loaded Vocabulary:** Curated Korean words organized by difficulty (Beginner, Intermediate, Advanced) with commonly used daily vocabulary
+- **No Setup Required:** Start learning immediately without uploading files or creating decks
+- **Pronunciation Focus:** Includes both Hangul and romanized pronunciation to help improve reading accuracy
+- **Flexible Practice:** Choose between 10 or 20 cards per session for daily practice
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Three difficulty levels: Beginner, Intermediate, Advanced
+- Choose 10 or 20 cards per study session
+- Two-click interaction:
+  - First click: Reveals romanized pronunciation and English meaning
+  - Second click: Moves to next card
+- Progress tracking with visual progress bar
+- Collapsible sidebar menu for settings
+- Pre-loaded with 60 Korean vocabulary words (20 per level)
+- Clean, distraction-free interface
+- Responsive design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+**Frontend**
+- React 19
+- Bootstrap 5
+- Font Awesome
+- CSS3
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repository
+git clone <repository-url>
+cd flash-card-app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Start the application
+npm start
+```
 
-## Learn More
+The app will open in your browser at [http://localhost:3000](http://localhost:3000)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How to Use
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Open the Menu**
+   - Click the "☰ Menu" button in the top-left corner to open the settings sidebar
 
-### Code Splitting
+2. **Select Difficulty Level**
+   - Choose from three levels:
+     - **Beginner**: Basic, commonly used vocabulary
+     - **Intermediate**: Everyday conversational words
+     - **Advanced**: More complex vocabulary
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Choose Number of Cards**
+   - Select either 10 or 20 cards for your study session
+   - Start with 10 cards if you're a beginner or have limited time
 
-### Analyzing the Bundle Size
+4. **Start Learning**
+   - Click the "Start Learning" button to begin your flashcard session
+   - A progress bar will show how many cards you've completed
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. **Study with Two-Click Method**
+   - **First Click**: Read the Korean word (Hangul) on the card and try to pronounce it
+     - After clicking, the romanized pronunciation and English meaning will appear
+     - Check if you read it correctly
+   - **Second Click**: Once you've reviewed the pronunciation and meaning, click again to move to the next card
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. **Complete Your Session**
+   - Continue through all cards in your session
+   - When finished, you'll see a completion message
+   - Click "Back to Menu" to start a new session
