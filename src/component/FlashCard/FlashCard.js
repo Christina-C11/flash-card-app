@@ -18,11 +18,11 @@ function FlashCard({word, onNextCard}){
 
     return (
         <div className="container d-flex justify-content-center align-items-center" style={{minHeight:'400px'}}>
-            <div className="card shadow-lg rounded-4 flash-card-custom" 
+            <div className="card shadow-lg rounded-4 flash-card-custom"
                  onClick={handleClick}
-                 style={{maxWidth:'500px', minHeight:'300px', cursor:'pointer', width:'100%'}}
+                 style={{maxWidth:'800px', minHeight:'350px', cursor:'pointer', width:'100%'}}
             >
-                <div className ="card-body d-flex flex-column justify-content-center">
+                <div className ="card-body d-flex flex-column justify-content-center text-center">
                     <div className ="korean-word">{word.korean}</div>
                         {showAnswer && (
                             //Doesn't add extra elements to the DOM

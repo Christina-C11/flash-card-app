@@ -4,7 +4,7 @@ import SettingsMenu from './component/SettingsMenu/SettingsMenu';
 import koreanVocabulary from './koreanVocabulary';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 function App() {
@@ -33,15 +33,6 @@ function App() {
     }
   };
 
-  const resetStudy = () => {
-    setIsStudying(false);
-    setSelectedLevel(null);
-    setCardCount(null);
-    setStudyWords([]);
-    setCurrentCardIndex(0);
-    setShowSettings(true); // Show settings when going back
-  };
-
   const settingsState = {
     selectedLevel,
     setSelectedLevel,
@@ -59,50 +50,55 @@ function App() {
         onHide={() => setShowSettings(false)}
       />
 
+      {/* Hamburger Menu Button - Fixed Position */}
+      <button
+        className="btn settings-btn position-fixed"
+        onClick={() => setShowSettings(true)}
+        style={{
+          fontSize: '1.2rem',
+          padding: '0.4rem 0.8rem',
+          top: '1rem',
+          left: '1rem',
+          zIndex: 1030
+        }}
+        aria-label="Open menu"
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+
       {/* Main Content */}
-      <div className="container py-5">
-        {/* Header with Settings Button */}
-        <div className="d-flex justify-content-between align-items-center mb-5">
-          <button
-            className="btn settings-btn position-absolute start-0 ms-3"
-            onClick={() => setShowSettings(!showSettings)}
-            style={{ top: '2rem', fontSize: '1.5rem', padding: '0.5rem 1rem' }}
-            aria-label={showSettings ? 'Close menu' : 'Open menu'}
-          >
-            {showSettings ? (
-              <>
-                <FontAwesomeIcon icon={faArrowLeft} /> Back
-              </>
-            ) : (
-              <>
-                <FontAwesomeIcon icon={faBars} /> Menu
-              </>
-            )}
-          </button>
-          <div className="text-center flex-grow-1">
-            <h1 className="display-3 fw-bold mb-3 app-title">KlickClick</h1>
-            <p className="lead app-subtitle">Learn Vocabulary</p>
+      <div className="py-3 py-md-4" style={{ marginLeft: '0', paddingLeft: '3.2rem', paddingRight: '1rem' }}>
+        <style>{`
+          @media (min-width: 768px) {
+            .app-container > div:last-child {
+              margin-left: 320px;
+              padding-left: 2rem;
+            }
+          }
+        `}</style>
+
+        {/* Header with Title */}
+        <div className="d-flex align-items-center justify-content-center mb-5">
+          {/* Title and Subtitle */}
+          <div className="text-center">
+            <h1 className="fw-bold mb-0 app-title">KlickClick</h1>
+            <p className="lead app-subtitle mb-0">Learn Vocabulary</p>
           </div>
         </div>
 
         {/* Study View */}
         {isStudying ? (
           <>
-            <div className="d-flex justify-content-end mb-4">
-              <button className="btn back-btn" onClick={resetStudy}>
-                ← Back to Menu
-              </button>
-            </div>
-            <div className="progress mb-4" style={{ height: '25px' }}>
-              <div 
-                className="progress-bar bg-success" 
+            <div className="progress mb-5 mx-auto" style={{ height: '25px', maxWidth: '800px' }}>
+              <div
+                className="progress-bar bg-success"
                 style={{ width: `${((currentCardIndex + 1) / studyWords.length) * 100}%` }}
               >
                 {currentCardIndex + 1} / {studyWords.length}
               </div>
             </div>
-            <FlashCard 
-              word={studyWords[currentCardIndex]} 
+            <FlashCard
+              word={studyWords[currentCardIndex]}
               onNextCard={handleNextCard}
             />
           </>
