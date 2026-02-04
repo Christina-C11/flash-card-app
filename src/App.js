@@ -89,12 +89,19 @@ function App() {
         {/* Study View */}
         {isStudying ? (
           <>
-            <div className="progress mb-5 mx-auto" style={{ height: '25px', maxWidth: '800px' }}>
-              <div
-                className="progress-bar bg-success"
-                style={{ width: `${((currentCardIndex + 1) / studyWords.length) * 100}%` }}
-              >
-                {currentCardIndex + 1} / {studyWords.length}
+            <div className="mx-auto" style={{ maxWidth: '800px' }}>
+              <div className="d-flex justify-content-between align-items-center mb-2">
+                <span className="fw-bold small">Progress</span>
+                <span className="fw-bold" style={{ color: '#2c3e50' }}>
+                  {currentCardIndex + 1} / {studyWords.length}
+                </span>
+              </div>
+              <div className="progress mb-5" style={{ height: '25px' }}>
+                <div
+                  className="progress-bar bg-success"
+                  style={{ width: `${((currentCardIndex + 1) / studyWords.length) * 100}%` }}
+                >
+                </div>
               </div>
             </div>
             <FlashCard
