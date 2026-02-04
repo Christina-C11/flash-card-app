@@ -93,4 +93,4 @@ The app will open in your browser at [http://localhost:3000](http://localhost:30
 6. **Complete Your Session**
    - Continue through all cards in your session
    - When finished, you'll see a completion message
-   - Click "Back to Menu" to start a new session
+   - Open the hamburger menu to start a new session with different settings
